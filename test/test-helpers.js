@@ -6,7 +6,7 @@ module.exports = function (testOptions) {
 
   function setup(options) {
     var app = express()
-      , fileuploadInstance = fileupload.createFileUpload(options)
+      , fileuploadInstance = fileupload.createFileUpload.apply(this, arguments)
 
     return {
       app: app,
@@ -29,25 +29,25 @@ module.exports = function (testOptions) {
       return app.listen(testOptions.port)
     },
     setupGet: function (options) {
-      var setupVariables = setup(options)
+      var setupVariables = setup.apply(this, arguments)
         , get = setupVariables.fileupload.get
 
       return get
     },
     setupGetAsReadStream: function (options) {
-      var setupVariables = setup(options)
+      var setupVariables = setup.apply(this, arguments)
         , getAsReadStream = setupVariables.fileupload.getAsReadStream
 
       return getAsReadStream
     },
     setupPut: function (options) {
-      var setupVariables = setup(options)
+      var setupVariables = setup.apply(this, arguments)
         , put = setupVariables.fileupload.put
 
       return put
     },
     setupDelete: function (options) {
-      var setupVariables = setup(options)
+      var setupVariables = setup.apply(this, arguments)
         , remove = setupVariables.fileupload['delete']
 
       return remove
