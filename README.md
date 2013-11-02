@@ -85,10 +85,23 @@ Here is an example file object:
        basename: 'test1.gif'
      }
 
+###S3
+S3 support is provided when passing `s3` as the second parameter to `createFileUpload`
+
+    require('fileupload').createFileUpload('/uploadDir', 's3')
+    
+You will also need to set some environment variable:
+
+- S3_KEY 
+- S3_BUCKET 
+- S3_SECRET
+
+    S3_KEY=mykey S3_BUCKET=mybucket S3_SECRET=mysecret node app.js
+
 ## Todo
 
 - GridFS
-- S3
+- S3 (test)
 - SFTP
 - Better code documentation
 
