@@ -96,6 +96,8 @@ You will also need to set some environment variable:
 - S3_BUCKET 
 - S3_SECRET
 
+An example:
+
     S3_KEY=mykey S3_BUCKET=mybucket S3_SECRET=mysecret node app.js
 
 ## Todo
