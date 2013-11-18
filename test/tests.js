@@ -12,7 +12,8 @@ var mocha = new Mocha()
 
 mocha.reporter('spec').ui('bdd')
 
-mocha.addFile(join(__dirname, 'fileupload.test.js'))
+mocha.addFile(join(__dirname, 'fileupload.test.file.js'))
+mocha.addFile(join(__dirname, 'fileupload.test.s3.js'))
 
 var runner = mocha.run(function () {
   console.log('Finished', counts)
